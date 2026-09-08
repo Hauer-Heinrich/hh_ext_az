@@ -2,6 +2,12 @@
 
 /* --- Liste --- */
 .frame-type-hhextaz_list {
+    & .error {
+        color: red;
+        display: block;
+        font-weight: bold;
+    }
+
     & .group {
         margin: 0 0 3rem;
         scroll-margin-top: 100px;
