@@ -2,49 +2,87 @@
       xmlns:az="http://typo3.org/ns/HauerHeinrich/HhExtAz/ViewHelpers"
       data-namespace-typo3-fluid="true">
 
-<f:switch expression="{entry.recordType}">
-    <f:case value="internal">
-        <f:if condition="{entry.internalLink}">
-            <f:then>
-                <f:link.typolink parameter="{entry.internalLink}" class="entry-link entry-link--internal">
-                    <span class="entry__title" data-hhextaz-highlight><az:highlight text="{entry.title}" words="{words}" /></span>
-                </f:link.typolink>
-            </f:then>
-            <f:else>
-                <span class="entry__title" data-hhextaz-highlight><az:highlight text="{entry.title}" words="{words}" /></span>
-                <span class="error">LINK IS MISSING!</span>
-            </f:else>
-        </f:if>
-    </f:case>
+<div class="title">
+    <f:switch expression="{entry.recordType}">
+        <f:case value="internal">
+            <f:if condition="{entry.link}">
+                <f:then>
+                    <f:link.typolink parameter="{entry.link}" class="entry-link entry-link--internal">
+                        <span class="entry-title" data-hhextaz-highlight><az:highlight text="{entry.title}" words="{words}" /></span>
+                    </f:link.typolink>
+                    <span class="link-hint" aria-hidden="true">
+                        <svg class="icon icon-arrow"><use href="{f:uri.resource(path: 'EXT:hh_ext_az/Resources/Public/Icons/icon_sprite.svg')}#icon_arrow"></use></svg>
+                    </span>
+                </f:then>
+                <f:else>
+                    <span class="entry-title" data-hhextaz-highlight><az:highlight text="{entry.title}" words="{words}" /></span>
+                    <span class="error">LINK IS MISSING!</span>
+                </f:else>
+            </f:if>
+        </f:case>
 
-    <f:case value="external">
-        <f:if condition="{entry.externalLink}">
-            <f:then>
-                <f:link.typolink parameter="{entry.externalLink}" target="_blank" additionalAttributes="{rel: 'noopener noreferrer'}" class="entry-link entry-link--external">
-                    <span class="entry__title" data-hhextaz-highlight><az:highlight text="{entry.title}" words="{words}" /></span>
-                    <span class="external-hint" aria-hidden="true">&#8599;</span>
-                </f:link.typolink>
-            </f:then>
-            <f:else>
-                <span class="entry__title" data-hhextaz-highlight><az:highlight text="{entry.title}" words="{words}" /></span>
-                <span class="error">LINK IS MISSING!</span>
-            </f:else>
-        </f:if>
-    </f:case>
+        <f:case value="external">
+            <f:if condition="{entry.link}">
+                <f:then>
+                    <f:link.typolink parameter="{entry.link}" target="_blank" additionalAttributes="{rel: 'noopener noreferrer'}" class="entry-link entry-link--external">
+                        <span class="entry-title" data-hhextaz-highlight><az:highlight text="{entry.title}" words="{words}" /></span>
+                    </f:link.typolink>
+                    <span class="link-hint" aria-hidden="true">
+                        <svg class="icon icon-arrow"><use href="{f:uri.resource(path: 'EXT:hh_ext_az/Resources/Public/Icons/icon_sprite.svg')}#icon_arrow"></use></svg>
+                    </span>
+                </f:then>
+                <f:else>
+                    <span class="entry-title" data-hhextaz-highlight><az:highlight text="{entry.title}" words="{words}" /></span>
+                    <span class="error">LINK IS MISSING!</span>
+                </f:else>
+            </f:if>
+        </f:case>
 
-    <f:defaultCase>
-        <f:link.action action="show"
-            controller="Entry"
-            extensionName="HhExtAz"
-            pluginName="List"
-            pageUid="{settings.detailPid}"
-            arguments="{entry: entry}"
-            class="entry-link entry-link--detail"
-        >
-            <span class="entry__title" data-hhextaz-highlight><az:highlight text="{entry.title}" words="{words}" /></span>
-        </f:link.action>
-    </f:defaultCase>
-</f:switch>
+        <f:case value="file">
+            <f:if condition="{entry.link}">
+                <f:then>
+                    <f:if condition="{entry.forceDownload}">
+                        <f:then>
+                            <f:link.typolink parameter="{entry.link}" class="entry-link entry-link--file" additionalAttributes="{download: ''}">
+                                <span class="entry-title" data-hhextaz-highlight><az:highlight text="{entry.title}" words="{words}" /></span>
+                            </f:link.typolink>
+                            <span class="link-hint" aria-hidden="true">
+                                <svg class="icon icon-download"><use href="{f:uri.resource(path: 'EXT:hh_ext_az/Resources/Public/Icons/icon_sprite.svg')}#icon_download"></use></svg>
+                            </span>
+                        </f:then>
+                        <f:else>
+                            <f:link.typolink parameter="{entry.link}" class="entry-link entry-link--file">
+                                <span class="entry-title" data-hhextaz-highlight><az:highlight text="{entry.title}" words="{words}" /></span>
+                            </f:link.typolink>
+                            <span class="link-hint" aria-hidden="true">
+                                <svg class="icon icon-arrow"><use href="{f:uri.resource(path: 'EXT:hh_ext_az/Resources/Public/Icons/icon_sprite.svg')}#icon_arrow"></use></svg>
+                            </span>
+                        </f:else>
+                    </f:if>
+                </f:then>
+                <f:else>
+                    <span class="entry-title" data-hhextaz-highlight><az:highlight text="{entry.title}" words="{words}" /></span>
+                    <span class="error">LINK IS MISSING!</span>
+                </f:else>
+            </f:if>
+        </f:case>
+
+        <f:defaultCase>
+            <f:link.action action="show"
+                controller="Entry"
+                extensionName="HhExtAz"
+                pluginName="List"
+                arguments="{entry: entry}"
+                class="entry-link entry-link--detail"
+            >
+                <span class="entry-title" data-hhextaz-highlight><az:highlight text="{entry.title}" words="{words}" /></span>
+            </f:link.action>
+            <span class="link-hint" aria-hidden="true">
+                <svg class="icon icon-arrow"><use href="{f:uri.resource(path: 'EXT:hh_ext_az/Resources/Public/Icons/icon_sprite.svg')}#icon_arrow"></use></svg>
+            </span>
+        </f:defaultCase>
+    </f:switch>
+</div>
 
 <f:if condition="{entry.teaser}">
     <p class="teaser" data-hhextaz-highlight><az:highlight text="{entry.teaser}" words="{words}" /></p>

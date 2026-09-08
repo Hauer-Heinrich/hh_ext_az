@@ -3,40 +3,60 @@
     <file source-language="en" datatype="plaintext" original="EXT:hh_ext_az/Resources/Private/Language/locallang_db.xlf" product-name="hh_ext_az">
         <body>
             <trans-unit id="tx_hhextaz_domain_model_entry" resname="tx_hhextaz_domain_model_entry">
-                <source>A-Z Eintrag</source>
+                <source>A-Z Entry</source>
             </trans-unit>
             <trans-unit id="tx_hhextaz_domain_model_entry.record_type" resname="tx_hhextaz_domain_model_entry.record_type">
                 <source>Typ</source>
             </trans-unit>
             <trans-unit id="tx_hhextaz_domain_model_entry.record_type.default" resname="tx_hhextaz_domain_model_entry.record_type.default">
-                <source>Standard (mit Detailseite)</source>
+                <source>Default (with Detail-Pages)</source>
             </trans-unit>
             <trans-unit id="tx_hhextaz_domain_model_entry.record_type.internal" resname="tx_hhextaz_domain_model_entry.record_type.internal">
-                <source>Interner Link</source>
+                <source>Internal Link</source>
             </trans-unit>
             <trans-unit id="tx_hhextaz_domain_model_entry.record_type.external" resname="tx_hhextaz_domain_model_entry.record_type.external">
-                <source>Externer Link</source>
+                <source>External Link</source>
+            </trans-unit>
+            <trans-unit id="tx_hhextaz_domain_model_entry.record_type.file" resname="tx_hhextaz_domain_model_entry.record_type.file">
+                <source>File Link</source>
             </trans-unit>
             <trans-unit id="tx_hhextaz_domain_model_entry.title" resname="tx_hhextaz_domain_model_entry.title">
                 <source>Titel</source>
             </trans-unit>
             <trans-unit id="tx_hhextaz_domain_model_entry.slug" resname="tx_hhextaz_domain_model_entry.slug">
-                <source>URL-Segment</source>
+                <source>URL-Slug</source>
             </trans-unit>
             <trans-unit id="tx_hhextaz_domain_model_entry.teaser" resname="tx_hhextaz_domain_model_entry.teaser">
                 <source>Teaser</source>
             </trans-unit>
             <trans-unit id="tx_hhextaz_domain_model_entry.description" resname="tx_hhextaz_domain_model_entry.description">
-                <source>Beschreibung</source>
+                <source>Description</source>
             </trans-unit>
             <trans-unit id="tx_hhextaz_domain_model_entry.image" resname="tx_hhextaz_domain_model_entry.image">
-                <source>Bild</source>
+                <source>Image</source>
+            </trans-unit>
+
+            <trans-unit id="tx_hhextaz_domain_model_entry.link" resname="tx_hhextaz_domain_model_entry.link">
+                <source>Link</source>
             </trans-unit>
             <trans-unit id="tx_hhextaz_domain_model_entry.internal_link" resname="tx_hhextaz_domain_model_entry.internal_link">
-                <source>Interner Link (Seite)</source>
+                <source>Internal Link (Page)</source>
             </trans-unit>
             <trans-unit id="tx_hhextaz_domain_model_entry.external_link" resname="tx_hhextaz_domain_model_entry.external_link">
-                <source>Externer Link (URL)</source>
+                <source>External Link (URL)</source>
+            </trans-unit>
+            <trans-unit id="tx_hhextaz_domain_model_entry.file_link" resname="tx_hhextaz_domain_model_entry.file_link">
+                <source>File Link</source>
+            </trans-unit>
+
+            <trans-unit id="tx_hhextaz_domain_model_entry.force_download" resname="tx_hhextaz_domain_model_entry.force_download">
+                <source>File Link</source>
+            </trans-unit>
+            <trans-unit id="tx_hhextaz_domain_model_entry.force_download.checked" resname="tx_hhextaz_domain_model_entry.force_download.checked">
+                <source>Download</source>
+            </trans-unit>
+            <trans-unit id="tx_hhextaz_domain_model_entry.force_download.unchecked" resname="tx_hhextaz_domain_model_entry.force_download.unchecked">
+                <source>Open</source>
             </trans-unit>
 
             <trans-unit id="plugin.tab" resname="plugin.tab">
@@ -47,7 +67,7 @@
             </trans-unit>
 
             <trans-unit id="plugin.list.title" resname="plugin.list.title">
-                <source>A-Z: Liste</source>
+                <source>A-Z: List</source>
             </trans-unit>
             <trans-unit id="plugin.list.description" resname="plugin.list.description">
                 <source>Zeigt alle Einträge alphabetisch gruppiert an (inkl. Detailansicht für Standard-Einträge).</source>
@@ -57,7 +77,7 @@
             </trans-unit>
 
             <trans-unit id="plugin.search.title" resname="plugin.search.title">
-                <source>A-Z: Suche</source>
+                <source>A-Z: Search</source>
             </trans-unit>
             <trans-unit id="plugin.search.description" resname="plugin.search.description">
                 <source>Volltextsuche mit Highlighting der Treffer; nicht passende Einträge werden ausgeblendet.</source>

@@ -13,7 +13,6 @@ CREATE TABLE tx_hhextaz_domain_model_entry (
     teaser text,
     description text,
     image int(11) unsigned DEFAULT '0' NOT NULL,
-    internal_link varchar(1024) DEFAULT '' NOT NULL,
-    external_link varchar(1024) DEFAULT '' NOT NULL,
+    link varchar(1024) DEFAULT '' NOT NULL,
     categories int(11) unsigned DEFAULT '0' NOT NULL
 );

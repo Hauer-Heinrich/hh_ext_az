@@ -54,13 +54,64 @@ return [
     ],
     'types' => [
         'default' => [
-            'showitem' => 'record_type, title, slug, teaser, description, image,' . $commonTabs,
+            'showitem' => '
+                record_type,
+                title,
+
+                teaser,
+                description,
+                image,
+                slug,' . $commonTabs,
         ],
         'internal' => [
-            'showitem' => 'record_type, title, teaser, internal_link,' . $commonTabs,
+            'showitem' => '
+                record_type,
+                title,
+                teaser,
+                link,' . $commonTabs,
+            'columnsOverrides' => [
+                'link' => [
+                    'label' => $ll . 'tx_hhextaz_domain_model_entry.internal_link',
+                    'config' => [
+                        'allowedTypes' => ['page', 'record'],
+                        'required' => true,
+                    ],
+                ],
+            ],
         ],
         'external' => [
-            'showitem' => 'record_type, title, teaser, external_link,' . $commonTabs,
+            'showitem' => '
+                record_type,
+                title,
+                teaser,
+                link,' . $commonTabs,
+            'columnsOverrides' => [
+                'link' => [
+                    'label' => $ll . 'tx_hhextaz_domain_model_entry.external_link',
+                    'config' => [
+                        'allowedTypes' => ['url', 'email'],
+                        'required' => true,
+                    ],
+                ],
+            ],
+        ],
+        'file' => [
+            'showitem' => '
+                record_type,
+                title,
+                teaser,
+                link,
+                force_download,
+                image,' . $commonTabs,
+            'columnsOverrides' => [
+                'link' => [
+                    'label' => $ll . 'tx_hhextaz_domain_model_entry.file_link',
+                    'config' => [
+                        'allowedTypes' => ['file'],
+                        'required' => true,
+                    ],
+                ],
+            ],
         ],
     ],
     'columns' => [
@@ -89,6 +140,7 @@ return [
             ],
         ],
         'record_type' => [
+            'excldue' => true,
             'label' => $ll . 'tx_hhextaz_domain_model_entry.record_type',
             'onChange' => 'reload',
             'config' => [
@@ -107,11 +159,16 @@ return [
                         'label' => $ll . 'tx_hhextaz_domain_model_entry.record_type.external',
                         'value' => 'external',
                     ],
+                    [
+                        'label' => $ll . 'tx_hhextaz_domain_model_entry.record_type.file',
+                        'value' => 'file',
+                    ],
                 ],
                 'default' => 'default',
             ],
         ],
         'title' => [
+            'excldue' => true,
             'label' => $ll . 'tx_hhextaz_domain_model_entry.title',
             'config' => [
                 'type' => 'input',
@@ -122,6 +179,7 @@ return [
             ],
         ],
         'slug' => [
+            'excldue' => true,
             'label' => $ll . 'tx_hhextaz_domain_model_entry.slug',
             'config' => [
                 'type' => 'slug',
@@ -138,6 +196,7 @@ return [
             ],
         ],
         'teaser' => [
+            'excldue' => true,
             'label' => $ll . 'tx_hhextaz_domain_model_entry.teaser',
             'config' => [
                 'type' => 'text',
@@ -146,6 +205,7 @@ return [
             ],
         ],
         'description' => [
+            'excldue' => true,
             'label' => $ll . 'tx_hhextaz_domain_model_entry.description',
             'config' => [
                 'type' => 'text',
@@ -155,6 +215,7 @@ return [
             ],
         ],
         'image' => [
+            'excldue' => true,
             'label' => $ll . 'tx_hhextaz_domain_model_entry.image',
             'config' => [
                 'type' => 'file',
@@ -162,22 +223,29 @@ return [
                 'allowed' => 'common-image-types',
             ],
         ],
-        'internal_link' => [
-            'label' => $ll . 'tx_hhextaz_domain_model_entry.internal_link',
+        'link' => [
+            'excldue' => true,
+            'label' => $ll . 'tx_hhextaz_domain_model_entry.link',
             'config' => [
                 'type' => 'link',
-                'allowedTypes' => ['page'],
-                'required' => true,
             ],
         ],
-        'external_link' => [
-            'label' => $ll . 'tx_hhextaz_domain_model_entry.external_link',
+        'force_download' => [
+            'excldue' => true,
+            'label' => $ll . 'tx_hhextaz_domain_model_entry.force_download',
             'config' => [
-                'type' => 'link',
-                'allowedTypes' => ['url'],
-                'required' => true,
+                'type' => 'check',
+                'renderType' => 'checkboxLabeledToggle',
+                'items' => [
+                    [
+                        'label' => '',
+                        'labelChecked' => $ll . 'tx_hhextaz_domain_model_entry.force_download.checked',
+                        'labelUnchecked' => $ll . 'tx_hhextaz_domain_model_entry.force_download.unchecked',
+                    ],
+                ],
             ],
         ],
+
         'hidden' => [
             'exclude' => true,
             'label' => $llCore . 'LGL.hidden',

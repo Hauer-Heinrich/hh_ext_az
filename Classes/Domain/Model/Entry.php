@@ -15,6 +15,7 @@ class Entry extends AbstractEntity {
     public const TYPE_DEFAULT = 'default';
     public const TYPE_INTERNAL = 'internal';
     public const TYPE_EXTERNAL = 'external';
+    public const TYPE_FILE = 'file';
 
     protected string $title = '';
     protected ?string $teaser = '';
@@ -37,10 +38,10 @@ class Entry extends AbstractEntity {
     }
 
     public function getTitle(): string { return $this->title; }
-    public function setTitle(string $title): void { $this->title = $title; }
+    public function setTitle(string $value): void { $this->title = $value; }
 
     public function getTeaser(): string { return (string)$this->teaser; }
-    public function setTeaser(?string $teaser): void { $this->teaser = $teaser; }
+    public function setTeaser(?string $value): void { $this->teaser = $value; }
 
     public function getRecordType(): string { return self::TYPE_DEFAULT; }
 

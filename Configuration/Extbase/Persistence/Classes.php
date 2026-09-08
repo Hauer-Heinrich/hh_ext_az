@@ -5,6 +5,7 @@ use HauerHeinrich\HhExtAz\Domain\Model\DefaultEntry;
 use HauerHeinrich\HhExtAz\Domain\Model\Entry;
 use HauerHeinrich\HhExtAz\Domain\Model\ExternalEntry;
 use HauerHeinrich\HhExtAz\Domain\Model\InternalEntry;
+use HauerHeinrich\HhExtAz\Domain\Model\FileEntry;
 
 /*
  * Single Table Inheritance:
@@ -17,6 +18,7 @@ return [
             'default' => DefaultEntry::class,
             'internal' => InternalEntry::class,
             'external' => ExternalEntry::class,
+            'file' => FileEntry::class,
         ],
     ],
     DefaultEntry::class => [
@@ -30,5 +32,9 @@ return [
     ExternalEntry::class => [
         'tableName' => 'tx_hhextaz_domain_model_entry',
         'recordType' => 'external',
+    ],
+    FileEntry::class => [
+        'tableName' => 'tx_hhextaz_domain_model_entry',
+        'recordType' => 'file',
     ],
 ];

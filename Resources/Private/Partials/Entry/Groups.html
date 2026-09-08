@@ -7,7 +7,7 @@
 
         <ul class="entries">
             <f:for each="{group.entries}" as="entry">
-                <li class="entry"
+                <li class="entry type-{entry.recordType}"
                     data-entry
                     data-hhextaz-text="{entry.title} {entry.teaser} {entry.description -> f:format.stripTags()}"
                 >

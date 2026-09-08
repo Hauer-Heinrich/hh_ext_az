@@ -24,6 +24,24 @@
         list-style: none;
         margin: 0;
         padding: 0;
+
+        & .title {
+            color: var(--az-entry-title--color, #e2001a);
+            display: grid;
+            grid-template-columns: 1fr 30px;
+            gap: 15px;
+
+            & .icon {
+                aspect-ratio: 1 / 1;
+                height: auto;
+                width: 100%;
+            }
+
+            &:hover,
+            &:focus-within {
+                color: var(--az-entry-title--color-hover, #80942F);
+            }
+        }
     }
 
     & .entry {
@@ -35,7 +53,7 @@
     }
 
     & .entry-link {
-        color: var(--az-entry-link--color, #e2001a);
+        color: inherit;
         font-weight: 500;
         text-decoration: none;
     }
