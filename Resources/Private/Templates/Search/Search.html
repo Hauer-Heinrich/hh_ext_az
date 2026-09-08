@@ -5,25 +5,7 @@
 
 <f:section name="Main">
     <div class="hhextaz-search" data-hhextaz-search>
-        <f:form action="search" method="get" class="search-form">
-            <label class="search-label" for="hhextaz-search-input">
-                <f:translate key="LLL:EXT:hh_ext_az/Resources/Private/Language/locallang.xlf:search.label" />
-            </label>
-            <div class="search-row">
-                <f:form.textfield
-                    name="q"
-                    value="{q}"
-                    id="hhextaz-search-input"
-                    class="search-input"
-                    data="{'hhextaz-input': '1'}"
-                    additionalAttributes="{type: 'search', autocomplete: 'off', placeholder: '{f:translate(key: \'LLL:EXT:hh_ext_az/Resources/Private/Language/locallang.xlf:search.placeholder\')}'}"
-                />
-                <f:form.submit
-                    class="search-submit"
-                    value="{f:translate(key: 'LLL:EXT:hh_ext_az/Resources/Private/Language/locallang.xlf:search.submit')}"
-                />
-            </div>
-        </f:form>
+        <f:render partial="Search/SearchForm" arguments="{_all}" />
 
         <f:if condition="{hasQuery}">
             <div class="search-results" data-hhextaz-results>
