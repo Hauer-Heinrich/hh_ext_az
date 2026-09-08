@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="EXT:hh_ext_az/Resources/Private/Language/locallang.xlf" product-name="hh_ext_az">
+        <body>
+            <trans-unit id="list.empty" resname="list.empty">
+                <source>Es sind noch keine Einträge vorhanden.</source>
+            </trans-unit>
+            <trans-unit id="search.label" resname="search.label">
+                <source>Suche</source>
+            </trans-unit>
+            <trans-unit id="search.placeholder" resname="search.placeholder">
+                <source>Suchbegriff eingeben …</source>
+            </trans-unit>
+            <trans-unit id="search.submit" resname="search.submit">
+                <source>Suchen</source>
+            </trans-unit>
+            <trans-unit id="search.resultsFor" resname="search.resultsFor">
+                <source>Suchergebnisse für</source>
+            </trans-unit>
+            <trans-unit id="search.noResults" resname="search.noResults">
+                <source>Keine Einträge gefunden.</source>
+            </trans-unit>
+            <trans-unit id="menu.ariaLabel" resname="menu.ariaLabel">
+                <source>Sprungmenü A bis Z</source>
+            </trans-unit>
+            <trans-unit id="detail.back" resname="detail.back">
+                <source>Zurück zur Übersicht</source>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

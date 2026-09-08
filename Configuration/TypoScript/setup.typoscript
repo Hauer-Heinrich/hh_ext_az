@@ -1,0 +1,34 @@
+plugin.tx_hhextaz {
+    view {
+        templateRootPaths {
+            0 = EXT:hh_ext_az/Resources/Private/Templates/
+            10 = {$plugin.tx_hhextaz.view.templateRootPath}
+        }
+        partialRootPaths {
+            0 = EXT:hh_ext_az/Resources/Private/Partials/
+            10 = {$plugin.tx_hhextaz.view.partialRootPath}
+        }
+        layoutRootPaths {
+            0 = EXT:hh_ext_az/Resources/Private/Layouts/
+            10 = {$plugin.tx_hhextaz.view.layoutRootPath}
+        }
+    }
+
+    persistence {
+        storagePid = {$plugin.tx_hhextaz.persistence.storagePid}
+        recursive = 1
+    }
+
+    settings {
+        # Reihenfolge der Buchstabengruppen, kommagetrennt.
+        # Beispiel: menuSorting = 0-9,a,b,c,d,e,f,g
+        # Alles, was keinem gelisteten Buchstaben zugeordnet werden kann, landet in der Gruppe "0-9".
+        menuSorting = {$plugin.tx_hhextaz.settings.menuSorting}
+
+        # Seite mit dem List-Plugin (Detailansicht)
+        detailPid = {$plugin.tx_hhextaz.settings.detailPid}
+
+        includeCss = {$plugin.tx_hhextaz.settings.includeCss}
+        includeJavaScript = {$plugin.tx_hhextaz.settings.includeJavaScript}
+    }
+}

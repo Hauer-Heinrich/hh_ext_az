@@ -1,0 +1,26 @@
+plugin.tx_hhextaz {
+    view {
+        # cat=plugin.tx_hhextaz/file; type=string; label=Template Root Path (Override)
+        templateRootPath =
+        # cat=plugin.tx_hhextaz/file; type=string; label=Partial Root Path (Override)
+        partialRootPath =
+        # cat=plugin.tx_hhextaz/file; type=string; label=Layout Root Path (Override)
+        layoutRootPath =
+    }
+
+    persistence {
+        # cat=plugin.tx_hhextaz//a; type=string; label=Datensatz-Ordner (Storage PID)
+        storagePid =
+    }
+
+    settings {
+        # cat=plugin.tx_hhextaz//b; type=string; label=Reihenfolge der Buchstabengruppen: Kommagetrennt, z. B. "0-9,a,b,c,d". Nicht gelistete Zeichen landen in der Gruppe "0-9".
+        menuSorting = a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,0-9
+        # cat=plugin.tx_hhextaz//c; type=int+; label=Detailseite (PID): Seite, auf der das List-Plugin fuer die Detailansicht liegt
+        detailPid = 0
+        # cat=plugin.tx_hhextaz//d; type=int+; label=Include CSS
+        includeCss = 1
+        # cat=plugin.tx_hhextaz//d; type=int+; label=Include JavaScript
+        includeJavaScript = 1
+    }
+}

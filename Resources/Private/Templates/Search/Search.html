@@ -1,0 +1,48 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    data-namespace-typo3-fluid="true">
+
+<f:layout name="Default" />
+
+<f:section name="Main">
+    <div class="hhextaz-search" data-hhextaz-search>
+        <f:form action="search" method="get" class="search-form">
+            <label class="search-label" for="hhextaz-search-input">
+                <f:translate key="LLL:EXT:hh_ext_az/Resources/Private/Language/locallang.xlf:search.label" />
+            </label>
+            <div class="search-row">
+                <f:form.textfield
+                    name="q"
+                    value="{q}"
+                    id="hhextaz-search-input"
+                    class="search-input"
+                    data="{'hhextaz-input': '1'}"
+                    additionalAttributes="{type: 'search', autocomplete: 'off', placeholder: '{f:translate(key: \'LLL:EXT:hh_ext_az/Resources/Private/Language/locallang.xlf:search.placeholder\')}'}"
+                />
+                <f:form.submit
+                    class="search-submit"
+                    value="{f:translate(key: 'LLL:EXT:hh_ext_az/Resources/Private/Language/locallang.xlf:search.submit')}"
+                />
+            </div>
+        </f:form>
+
+        <f:if condition="{hasQuery}">
+            <div class="search-results" data-hhextaz-results>
+                <f:if condition="{groups}">
+                    <f:then>
+                        <p class="search-count">
+                            <f:translate key="LLL:EXT:hh_ext_az/Resources/Private/Language/locallang.xlf:search.resultsFor" /> &bdquo;{q}&ldquo;
+                        </p>
+                        <f:render partial="Entry/Groups" arguments="{groups: groups, settings: settings, words: words}" />
+                    </f:then>
+                    <f:else>
+                        <p class="search-empty">
+                            <f:translate key="LLL:EXT:hh_ext_az/Resources/Private/Language/locallang.xlf:search.noResults" />
+                        </p>
+                    </f:else>
+                </f:if>
+            </div>
+        </f:if>
+    </div>
+</f:section>
+
+</html>

@@ -1,0 +1,21 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    data-namespace-typo3-fluid="true">
+
+<f:layout name="Default" />
+
+<f:section name="Main">
+    <div class="hhextaz-list" data-hhextaz-list>
+        <f:if condition="{groups}">
+            <f:then>
+                <f:render partial="Entry/Groups" arguments="{groups: groups, settings: settings, words: words}" />
+            </f:then>
+            <f:else>
+                <p class="list-empty">
+                    <f:translate key="LLL:EXT:hh_ext_az/Resources/Private/Language/locallang.xlf:list.empty" />
+                </p>
+            </f:else>
+        </f:if>
+    </div>
+</f:section>
+
+</html>

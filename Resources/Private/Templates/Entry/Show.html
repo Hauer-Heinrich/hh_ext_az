@@ -1,0 +1,26 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    data-namespace-typo3-fluid="true">
+
+<f:layout name="Default" />
+
+<f:section name="Main">
+    <article class="hhextaz-detail">
+        <h1 class="detail-title">{entry.title}</h1>
+
+        <f:if condition="{entry.image}">
+            <figure class="detail-figure">
+                <f:image image="{entry.image}" maxWidth="1200" alt="{entry.title}" class="detail-image" />
+            </figure>
+        </f:if>
+
+        <f:if condition="{entry.teaser}">
+            <p class="ce-bodytext detail-teaser">{entry.teaser}</p>
+        </f:if>
+
+        <div class="ce-bodytext detail-description">
+            <f:format.html>{entry.description}</f:format.html>
+        </div>
+    </article>
+</f:section>
+
+</html>

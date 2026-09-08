@@ -1,0 +1,16 @@
+routeEnhancers:
+  HhExtAzDetail:
+    type: Extbase
+    extension: HhExtAz
+    plugin: List
+    routes:
+      - routePath: '/{entry_slug}'
+        _controller: 'Entry::show'
+        _arguments:
+          entry_slug: entry
+    defaultController: 'Entry::list'
+    aspects:
+      entry_slug:
+        type: PersistedAliasMapper
+        tableName: tx_hhextaz_domain_model_entry
+        routeFieldName: slug

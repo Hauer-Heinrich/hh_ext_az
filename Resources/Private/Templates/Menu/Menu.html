@@ -1,0 +1,29 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    data-namespace-typo3-fluid="true">
+
+<f:layout name="Default" />
+
+<f:section name="Main">
+    <nav class="hhextaz-menu" data-hhextaz-menu aria-label="{f:translate(key: 'LLL:EXT:hh_ext_az/Resources/Private/Language/locallang.xlf:menu.ariaLabel')}">
+        <ul class="menu-list">
+            <f:for each="{tokens}" as="token">
+                <li class="menu-item">
+                    <f:if condition="{token.hasEntries}">
+                        <f:then>
+                            <f:link.page
+                                section="letter-{token.anchor}"
+                                class="menu-link"
+                                data="{'hhextaz-menu-letter': token.anchor}"
+                            >{token.label}</f:link.page>
+                        </f:then>
+                        <f:else>
+                            <span class="menu-link menu-link--inactive">{token.label}</span>
+                        </f:else>
+                    </f:if>
+                </li>
+            </f:for>
+        </ul>
+    </nav>
+</f:section>
+
+</html>

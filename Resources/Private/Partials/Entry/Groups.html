@@ -1,0 +1,21 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    data-namespace-typo3-fluid="true">
+
+<f:for each="{groups}" as="group">
+    <section class="group" id="letter-{group.anchor}" data-group>
+        <h2 class="group-letter">{group.label}</h2>
+
+        <ul class="entries">
+            <f:for each="{group.entries}" as="entry">
+                <li class="entry"
+                    data-entry
+                    data-hhextaz-text="{entry.title} {entry.teaser} {entry.description -> f:format.stripTags()}"
+                >
+                    <f:render partial="Entry/Item" arguments="{entry: entry, settings: settings, words: words}" />
+                </li>
+            </f:for>
+        </ul>
+    </section>
+</f:for>
+
+</html>

@@ -1,0 +1,5 @@
+mod {
+    web_list {
+        allowedNewTables = tx_hhextaz_domain_model_entry
+    }
+}

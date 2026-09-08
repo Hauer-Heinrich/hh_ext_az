@@ -1,0 +1,56 @@
+categories:
+  hhExtAz:
+    label: 'Hauer-Heinrich A-Z'
+
+settings:
+  plugin.tx_hhextaz.settings.menuSorting:
+    label: 'Reihenfolge der Buchstabengruppen'
+    description: 'Kommagetrennt, z. B. "0-9,a,b,c,d". Nicht gelistete Zeichen landen in der Gruppe "0-9".'
+    category: hhExtAz
+    type: string
+    default: 'a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,0-9'
+
+  plugin.tx_hhextaz.settings.detailPid:
+    label: 'Detailseite (PID)'
+    description: 'Seite, auf der das List-Plugin liegt (Detailansicht).'
+    category: hhExtAz
+    type: int
+    default: 0
+
+  plugin.tx_hhextaz.persistence.storagePid:
+    label: 'Datensatz-Ordner (Storage PID)'
+    category: hhExtAz
+    type: string
+    default: ''
+
+  plugin.tx_hhextaz.view.templateRootPath:
+    label: 'Template Root Path (Override)'
+    category: hhExtAz
+    type: string
+    default: ''
+
+  plugin.tx_hhextaz.view.partialRootPath:
+    label: 'Partial Root Path (Override)'
+    category: hhExtAz
+    type: string
+    default: ''
+
+  plugin.tx_hhextaz.view.layoutRootPath:
+    label: 'Layout Root Path (Override)'
+    category: hhExtAz
+    type: string
+    default: ''
+
+  plugin.tx_hhextaz.settings.includeCss:
+    label: 'Include CSS'
+    description: ''
+    category: hhExtAz
+    type: int
+    default: 1
+
+  plugin.tx_hhextaz.settings.includeJavaScript:
+    label: 'Include JavaScript'
+    description: ''
+    category: hhExtAz
+    type: int
+    default: 1

@@ -1,0 +1,44 @@
+{
+    "type": "typo3-cms-extension",
+    "name": "hauerheinrich/hh-ext-az",
+    "description": "A-Z Verzeichnis (z. B. Satzungen und Verordnungen) mit alphabetischer Liste, Detailseite, Volltextsuche (Highlighting) und Sprungmenue",
+    "homepage": "https://www.hauer-heinrich.de",
+    "authors": [
+        {
+            "name": "Christian Hackl",
+            "homepage": "http://www.hauer-heinrich.de",
+            "role": "Developer"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/Hauer-Heinrich/hh_ext_az/issues",
+        "source": "https://github.com/Hauer-Heinrich/hh_ext_az",
+        "docs": "https://github.com/Hauer-Heinrich/hh_ext_az/blob/master/README.md"
+    },
+    "funding": [
+        {
+            "type": "paypal",
+            "url": "https://www.paypal.com/paypalme/hauerheinrich"
+        }
+    ],
+    "license": "GPL-2.0-or-later",
+    "require": {
+        "typo3/cms-core": "^13.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "HauerHeinrich\\HhExtAz\\": "Classes/"
+        }
+    },
+    "extra": {
+        "typo3/cms": {
+            "cms-package-dir": "{$vendor-dir}/typo3/cms",
+            "web-dir": ".Build/Web",
+            "extension-key": "hh_ext_az",
+            "version": "1.0.0",
+            "Package": {
+                "providesPackages": []
+            }
+        }
+    }
+}

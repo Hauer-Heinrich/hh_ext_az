@@ -1,0 +1,53 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:az="http://typo3.org/ns/HauerHeinrich/HhExtAz/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+
+<f:switch expression="{entry.recordType}">
+    <f:case value="internal">
+        <f:if condition="{entry.internalLink}">
+            <f:then>
+                <f:link.typolink parameter="{entry.internalLink}" class="entry-link entry-link--internal">
+                    <span class="entry__title" data-hhextaz-highlight><az:highlight text="{entry.title}" words="{words}" /></span>
+                </f:link.typolink>
+            </f:then>
+            <f:else>
+                <span class="entry__title" data-hhextaz-highlight><az:highlight text="{entry.title}" words="{words}" /></span>
+                <span class="error">LINK IS MISSING!</span>
+            </f:else>
+        </f:if>
+    </f:case>
+
+    <f:case value="external">
+        <f:if condition="{entry.externalLink}">
+            <f:then>
+                <f:link.typolink parameter="{entry.externalLink}" target="_blank" additionalAttributes="{rel: 'noopener noreferrer'}" class="entry-link entry-link--external">
+                    <span class="entry__title" data-hhextaz-highlight><az:highlight text="{entry.title}" words="{words}" /></span>
+                    <span class="external-hint" aria-hidden="true">&#8599;</span>
+                </f:link.typolink>
+            </f:then>
+            <f:else>
+                <span class="entry__title" data-hhextaz-highlight><az:highlight text="{entry.title}" words="{words}" /></span>
+                <span class="error">LINK IS MISSING!</span>
+            </f:else>
+        </f:if>
+    </f:case>
+
+    <f:defaultCase>
+        <f:link.action action="show"
+            controller="Entry"
+            extensionName="HhExtAz"
+            pluginName="List"
+            pageUid="{settings.detailPid}"
+            arguments="{entry: entry}"
+            class="entry-link entry-link--detail"
+        >
+            <span class="entry__title" data-hhextaz-highlight><az:highlight text="{entry.title}" words="{words}" /></span>
+        </f:link.action>
+    </f:defaultCase>
+</f:switch>
+
+<f:if condition="{entry.teaser}">
+    <p class="teaser" data-hhextaz-highlight><az:highlight text="{entry.teaser}" words="{words}" /></p>
+</f:if>
+
+</html>

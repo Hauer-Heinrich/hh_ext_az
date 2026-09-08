@@ -1,0 +1,26 @@
+[
+    {
+        "outdir": ".",
+        "entryPoints": [
+            { "in": "./Resources/Public/Css/layout.css", "out": "./Resources/Public/Css/bundles/layout.bundle" },
+            { "in": "./Resources/Public/JavaScript/search.js", "out": "./Resources/Public/JavaScript/bundles/search.bundle" }
+        ],
+        "bundle": true,
+        "write": true,
+        "minify": true,
+        "sourcemap": true,
+        "logLevel": "info",
+        "external": [
+            "./Images/*", "../Images/*", "../../Images/*",
+            "./Fonts/*", "../Fonts/*", "../../Fonts/*",
+            "./Icons/*", "../Icons/*", "../../Icons/*",
+            "./Static/*", "../Static/*",
+            "./public/*", "../public/*",
+            "./static/*", "../static/*"
+        ],
+        "supported": {
+            "nesting": false,
+            "is-pseudo-class": false
+        }
+    }
+]
