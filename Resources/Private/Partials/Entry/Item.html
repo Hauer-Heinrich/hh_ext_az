@@ -9,14 +9,14 @@
                 <f:then>
                     <f:link.typolink parameter="{entry.link}" class="entry-link entry-link--internal">
                         <span class="entry-title" data-hhextaz-highlight><az:highlight text="{entry.title}" words="{words}" /></span>
+                        <span class="link-hint" aria-hidden="true">
+                            <svg class="icon icon-arrow" focusable="false"><use href="{f:uri.resource(path: 'EXT:hh_ext_az/Resources/Public/Icons/icon_sprite.svg')}#icon_arrow"></use></svg>
+                        </span>
                     </f:link.typolink>
-                    <span class="link-hint" aria-hidden="true">
-                        <svg class="icon icon-arrow"><use href="{f:uri.resource(path: 'EXT:hh_ext_az/Resources/Public/Icons/icon_sprite.svg')}#icon_arrow"></use></svg>
-                    </span>
                 </f:then>
                 <f:else>
                     <span class="entry-title" data-hhextaz-highlight><az:highlight text="{entry.title}" words="{words}" /></span>
-                    <span class="error">LINK IS MISSING!</span>
+                    <span class="error"><f:translate key="LLL:EXT:hh_ext_az/Resources/Private/Language/locallang.xlf:entry.linkMissing" /></span>
                 </f:else>
             </f:if>
         </f:case>
@@ -26,14 +26,15 @@
                 <f:then>
                     <f:link.typolink parameter="{entry.link}" target="_blank" additionalAttributes="{rel: 'noopener noreferrer'}" class="entry-link entry-link--external">
                         <span class="entry-title" data-hhextaz-highlight><az:highlight text="{entry.title}" words="{words}" /></span>
+                        <span class="link-hint" aria-hidden="true">
+                            <svg class="icon icon-arrow" focusable="false"><use href="{f:uri.resource(path: 'EXT:hh_ext_az/Resources/Public/Icons/icon_sprite.svg')}#icon_extern"></use></svg>
+                        </span>
+                        <span class="visually-hidden"> (<f:translate key="LLL:EXT:hh_ext_az/Resources/Private/Language/locallang.xlf:entry.opensInNewTab" />)</span>
                     </f:link.typolink>
-                    <span class="link-hint" aria-hidden="true">
-                        <svg class="icon icon-arrow"><use href="{f:uri.resource(path: 'EXT:hh_ext_az/Resources/Public/Icons/icon_sprite.svg')}#icon_arrow"></use></svg>
-                    </span>
                 </f:then>
                 <f:else>
                     <span class="entry-title" data-hhextaz-highlight><az:highlight text="{entry.title}" words="{words}" /></span>
-                    <span class="error">LINK IS MISSING!</span>
+                    <span class="error"><f:translate key="LLL:EXT:hh_ext_az/Resources/Private/Language/locallang.xlf:entry.linkMissing" /></span>
                 </f:else>
             </f:if>
         </f:case>
@@ -45,26 +46,31 @@
                         <f:then>
                             <f:link.typolink parameter="{entry.link}" class="entry-link entry-link--file" additionalAttributes="{download: ''}">
                                 <span class="entry-title" data-hhextaz-highlight><az:highlight text="{entry.title}" words="{words}" /></span>
+                                <span class="link-hint" aria-hidden="true">
+                                    <svg class="icon icon-download" focusable="false"><use href="{f:uri.resource(path: 'EXT:hh_ext_az/Resources/Public/Icons/icon_sprite.svg')}#icon_download"></use></svg>
+                                </span>
+                                <span class="visually-hidden"> (<f:translate key="LLL:EXT:hh_ext_az/Resources/Private/Language/locallang.xlf:entry.download" />)</span>
                             </f:link.typolink>
-                            <span class="link-hint" aria-hidden="true">
-                                <svg class="icon icon-download"><use href="{f:uri.resource(path: 'EXT:hh_ext_az/Resources/Public/Icons/icon_sprite.svg')}#icon_download"></use></svg>
-                            </span>
                         </f:then>
                         <f:else>
                             <f:link.typolink parameter="{entry.link}" class="entry-link entry-link--file">
                                 <span class="entry-title" data-hhextaz-highlight><az:highlight text="{entry.title}" words="{words}" /></span>
+                                <span class="link-hint" aria-hidden="true">
+                                    <svg class="icon icon-arrow" focusable="false"><use href="{f:uri.resource(path: 'EXT:hh_ext_az/Resources/Public/Icons/icon_sprite.svg')}#icon_arrow"></use></svg>
+                                </span>
                             </f:link.typolink>
-                            <span class="link-hint" aria-hidden="true">
-                                <svg class="icon icon-arrow"><use href="{f:uri.resource(path: 'EXT:hh_ext_az/Resources/Public/Icons/icon_sprite.svg')}#icon_arrow"></use></svg>
-                            </span>
                         </f:else>
                     </f:if>
                 </f:then>
                 <f:else>
                     <span class="entry-title" data-hhextaz-highlight><az:highlight text="{entry.title}" words="{words}" /></span>
-                    <span class="error">LINK IS MISSING!</span>
+                    <span class="error"><f:translate key="LLL:EXT:hh_ext_az/Resources/Private/Language/locallang.xlf:entry.linkMissing" /></span>
                 </f:else>
             </f:if>
+        </f:case>
+
+        <f:case value="text">
+            <span class="entry-title" data-hhextaz-highlight><az:highlight text="{entry.title}" words="{words}" /></span>
         </f:case>
 
         <f:defaultCase>
@@ -76,10 +82,10 @@
                 class="entry-link entry-link--detail"
             >
                 <span class="entry-title" data-hhextaz-highlight><az:highlight text="{entry.title}" words="{words}" /></span>
+                <span class="link-hint" aria-hidden="true">
+                    <svg class="icon icon-arrow" focusable="false"><use href="{f:uri.resource(path: 'EXT:hh_ext_az/Resources/Public/Icons/icon_sprite.svg')}#icon_arrow"></use></svg>
+                </span>
             </f:link.action>
-            <span class="link-hint" aria-hidden="true">
-                <svg class="icon icon-arrow"><use href="{f:uri.resource(path: 'EXT:hh_ext_az/Resources/Public/Icons/icon_sprite.svg')}#icon_arrow"></use></svg>
-            </span>
         </f:defaultCase>
     </f:switch>
 </div>

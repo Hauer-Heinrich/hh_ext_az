@@ -16,6 +16,7 @@ class Entry extends AbstractEntity {
     public const TYPE_INTERNAL = 'internal';
     public const TYPE_EXTERNAL = 'external';
     public const TYPE_FILE = 'file';
+    public const TYPE_TEXT = 'text';
 
     protected string $title = '';
     protected ?string $teaser = '';

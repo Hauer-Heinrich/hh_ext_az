@@ -113,6 +113,12 @@ return [
                 ],
             ],
         ],
+        'text' => [
+            'showitem' => '
+                record_type,
+                title,
+                teaser,' . $commonTabs,
+        ],
     ],
     'columns' => [
         'categories' => [
@@ -162,6 +168,10 @@ return [
                     [
                         'label' => $ll . 'tx_hhextaz_domain_model_entry.record_type.file',
                         'value' => 'file',
+                    ],
+                    [
+                        'label' => $ll . 'tx_hhextaz_domain_model_entry.record_type.text',
+                        'value' => 'text',
                     ],
                 ],
                 'default' => 'default',

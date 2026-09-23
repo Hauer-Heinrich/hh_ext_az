@@ -20,6 +20,9 @@
             <trans-unit id="tx_hhextaz_domain_model_entry.record_type.file" resname="tx_hhextaz_domain_model_entry.record_type.file">
                 <source>File Link</source>
             </trans-unit>
+            <trans-unit id="tx_hhextaz_domain_model_entry.record_type.text" resname="tx_hhextaz_domain_model_entry.record_type.text">
+                <source>Text (ohne Link)</source>
+            </trans-unit>
             <trans-unit id="tx_hhextaz_domain_model_entry.title" resname="tx_hhextaz_domain_model_entry.title">
                 <source>Titel</source>
             </trans-unit>

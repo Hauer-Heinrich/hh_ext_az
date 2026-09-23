@@ -27,15 +27,6 @@
 
         & .title {
             color: var(--az-entry-title--color, #e2001a);
-            display: grid;
-            grid-template-columns: 1fr 30px;
-            gap: 15px;
-
-            & .icon {
-                aspect-ratio: 1 / 1;
-                height: auto;
-                width: 100%;
-            }
 
             &:hover,
             &:focus-within {
@@ -54,8 +45,17 @@
 
     & .entry-link {
         color: inherit;
+        display: grid;
+        grid-template-columns: 1fr 30px;
+        gap: 15px;
         font-weight: 500;
         text-decoration: none;
+
+        & .icon {
+            aspect-ratio: 1 / 1;
+            height: auto;
+            width: 100%;
+        }
     }
 
     & .entry-link:hover,
