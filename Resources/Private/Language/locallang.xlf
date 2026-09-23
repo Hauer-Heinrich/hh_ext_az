@@ -26,6 +26,15 @@
             <trans-unit id="detail.back" resname="detail.back">
                 <source>Zurück zur Übersicht</source>
             </trans-unit>
+            <trans-unit id="entry.linkMissing" resname="entry.linkMissing">
+                <source>Kein Link hinterlegt</source>
+            </trans-unit>
+            <trans-unit id="entry.opensInNewTab" resname="entry.opensInNewTab">
+                <source>öffnet in neuem Tab</source>
+            </trans-unit>
+            <trans-unit id="entry.download" resname="entry.download">
+                <source>Download</source>
+            </trans-unit>
         </body>
     </file>
 </xliff>
